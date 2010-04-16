@@ -1,0 +1,23 @@
+{% extends "simple.html" %}
+{% load i18n %}
+{% load commons_tags %}
+{% block title %}{% trans "Welcome to the Open Mind User Test!" %}{% endblock title %}
+{% block content %}
+<p>Welcome to the Open Mind User Test!</p>
+
+<p>People constantly rely on unspoken assumptions to communicate and make sense
+of the world.  Computers don't have these assumptions, so they often
+appear stupid. Open Mind is a project aiming to collect basic statements of
+<b>common sense knowledge</b> in order to make computer interfaces better.</p>
+<p>We're testing some new interfaces for adding knowledge to Open Mind. Once
+you click "Begin", you're going to try one of these interfaces. We'd like you
+to use it as efficiently as you can and give us some feedback.</p>
+<p>(Don't worry too much about grammar. We're not currently testing Open Mind's
+ability to put together a correct sentence.)</p>
+<div><form action="/usertest/switch" method="GET"> 
+    <span style="font-weight: bold; font-size: 120%"> 
+    </span>
+    <input type="submit" name="answer" value="Begin!" />
+</form>
+{% endblock content %}
+

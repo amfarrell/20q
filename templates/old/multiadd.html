@@ -1,0 +1,26 @@
+{% extends "simple.html" %}
+{% load i18n %}
+{% load commons_tags %}
+{% block title %}{% trans "Thank you" %}{% endblock title %}
+{% block content %}
+<p><h3>Now that you've done this, your next step is to
+<b><a
+href="http://new-caledonia.media.mit.edu/survey/detail/20-questions-user-test/?next=done.html">
+take the survey</a></b> about the system you just used.
+<br /><h2><a
+href="http://new-caledonia.media.mit.edu/survey/detail/20-questions-user-test/?next=done.html">You're
+not done, take the survey!</a></h2></b> 
+</h3></p>
+
+
+<p>Open Mind learned the following facts:</p>
+<table>
+{% for assertion in added %}
+  <tr>{% include "commons/_assertion_tr.html" %}</tr>
+{% endfor %}
+</table>
+
+<p>
+
+
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends "simple.html" %}
+{% load i18n %}
+{% load commons_tags %}
+{% block title %}{% trans "Teach OpenMind a new concept" %}{% endblock title %}
+{% block content %}
+
+<div><form action="/usertest/a" method="POST">
+    <input type="hidden" name="frame" value="{{ chosenframe.id }}" />
+    <input type="hidden" name="concept" value="{{ concept }}" />
+    <input type="hidden" name="slot" value="{{ slot }}" />
+    <span style="font-weight: bold; font-size: 120%">
+   {% with_blanks_filled chosenframe.text concept slot %}
+    </span>
+    <input type="submit" name="answer" value="Teach OpenMind" />
+</form></div>
+{% endblock content %}
+

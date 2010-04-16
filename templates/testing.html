@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block content %}
+Hello tester.
+you are going to eat {{ foo }} for breakfast.
+I am going to eat:
+<ul>
+{% for food in tasty %}
+<li>{{ food }}</li>
+{% endfor %}
+</ul>
+{% endblock %}

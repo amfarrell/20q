@@ -1,0 +1,17 @@
+
+2) download the database from
+http://conceptnet.media.mit.edu/dist/ConceptNet-sqlite.tar.gz
+unzip and untar the file then `mv ConceptNet.db twentyq.db`
+ -> this works, but requires downloading conceptnet and ultimately
+wont work as far as actually installing on the production site
+
+
+This is the database for ConceptNet 4.0. You will probably want to use it
+together with the ConceptNet API, available from
+http://launchpad.net/conceptnet.
+
+you should have this on your python path in your virtualenv,
+so remember to run
+cscpython manage.py runserver
+
+Is there a better way to do this?

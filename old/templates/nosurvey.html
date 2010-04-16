@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load commons_tags %}
+{% block title %}{% trans "Done with the user test" %}{% endblock title %}
+{% block content %}
+<p>
+{% if added %}
+As a result of this interaction, Open Mind has learned or confirmed some facts.
+(If a fact has a score higher than 1, it is a fact entered by someone else
+that you confirmed.)
+</p>
+<table>
+{% for assertion in added %}
+  <tr>{% include "commons/_assertion_tr.html" %}</tr>
+{% endfor %}
+</table>
+{% endif %}
+<p>Thanks a lot!</p>
+<p>You've already taken the survey, so you don't need to do it again.</p>
+{% endblock content %}
+

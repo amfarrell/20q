@@ -1,0 +1,21 @@
+{% extends "simple.html" %}
+{% load i18n %}
+{% load commons_tags %}
+{% block title %}{% trans "Welcome to the Open Mind User Test!" %}{% endblock title %}
+{% block content %}
+<p>Pick a concept that you'd like to teach Open Mind about.  Enter it into the
+box as a complete phrase, such as "a cat" or "flying a kite".</p>
+<p>Your concept can be a physical object such as "a tree" or "a dog", an
+action such as "running" or "talking on the phone", or an abstract notion such
+as "liberty" or "red".</p>
+<p>Next, you will teach Open Mind 20 things about your concept.
+</p>
+<div><form action="/usertest/a" method="POST"> 
+    <span style="font-weight: bold; font-size: 120%"> Concept:
+       <input type="text" name="concept" size="10" /> 
+    </span>
+    <input type="submit" name="answer" value="Begin" />
+</form>
+</div>
+{% endblock content %}
+

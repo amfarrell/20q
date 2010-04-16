@@ -1,0 +1,61 @@
+{% extends "commons/base.html" %}
+{% load i18n %}
+{% load commons_tags %}
+{% block title %}{% trans "Open Mind: 20 Questions" %}{% endblock title %}
+{% block content %}
+<p>
+<ul>
+  {% for q in prev %}
+    {% if q.2 %} 
+      <span style="color: red"> 
+        <li>{{ guess_frame }} {{ q.3 }}? <b>{{ q.1 }}</b></li>
+      </span>
+    {% else %}
+      <li>{{ q.0 }} <b>{{ q.1 }}</b></li>
+    {% endif %}
+  {% endfor %}
+</ul>
+</p>
+
+{% if not give_up %}
+<p>
+<form action="/20q/" method="POST">
+    <input type="hidden" name="relation" value="{{ relation }}" />
+    <input type="hidden" name="condition" value="{{ condition }}" />
+    <input type="hidden" name="concept" value="{{ concept }}" />
+    <input type="hidden" name="slot" value="{{ slot }}" />
+    <input type="hidden" name="guess" value="{{ guess }}" />
+    <span style="font-weight: bold; font-size: 120%">
+    {% if guess %}
+      <span style="color: red">
+      {{ guess_frame }} {{ canonical_concept }}?
+      </span>
+    {% else %}
+      {{ question }}
+    {% endif %}
+    </span>
+    <input type="submit" name="answer" value="Yes" />
+    <input type="submit" name="answer" value="No" />
+    <input type="submit" name="answer" value="Maybe" />
+    <input type="submit" name="answer" value="Doesn't make sense" />
+</form>
+</p>
+<p><small>Possible concepts: {{ likely|join:", " }}</small></p>
+{% endif %}
+
+<p>
+{% if give_up %}
+<h3>I give up! Please tell me what you were thinking of:</h3>
+{% else %}
+You can end the game by telling me what it is:<br />
+{% endif %}
+
+<form action="/20q/tellme" method="POST">
+<input type="text" name="text"/>
+<input type="submit" value="Tell me" />
+</form>
+<!-- You can also <a href="/20q/reset">start over</a>. -->
+</p>
+
+{% endblock content %}
+

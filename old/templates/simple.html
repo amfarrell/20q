@@ -1,0 +1,23 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+{% load commons_tags %}
+{% load i18n %}
+{% load capture %}
+{% captureas title %}{% block title %}{% endblock %}{% endcaptureas %}
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="{{LANGUAGE_CODE}}" lang="{{LANGUAGE_CODE}}">
+<head>
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="stylesheet" href="/media/css/openmind.css" />
+    <title>{% block wholetitle %}{{title}} - Open Mind Common Sense ({{LANGUAGE_CODE}}){% endblock %}</title>
+{% block extra_header %}{% endblock %}
+</head>
+<body{% if debug %} class="devel"{% endif %}>
+  <div class="content">
+      {% block maincontent %}
+      <h1>{{title}}</h1>
+      {% block content %}{% endblock %}
+      {% endblock %}
+  </div>
+{% block scripts %}{% endblock scripts %}
+</body>
+</html>

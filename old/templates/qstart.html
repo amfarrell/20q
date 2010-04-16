@@ -1,0 +1,18 @@
+{% extends "simple.html" %}
+{% load i18n %}
+{% load commons_tags %}
+{% block title %}{% trans "Welcome to the Open Mind User Test!" %}{% endblock title %}
+{% block content %}
+<p>Think a concept that you'd like to teach Open Mind about.</p>
+<p>Your concept can be a physical object such as "a tree" or "a dog", an
+action such as "running" or "talking on the phone", or an abstract notion such
+as "liberty" or "red".</p>
+<p>
+Next, you will answer 20 questions about your concept. Meanwhile, if Open Mind is familiar with your concept, it will try to guess what it is.
+</p>
+<div><form action="/usertest/b" method="GET"> 
+    <input type="submit" name="answer" value="Continue" />
+</form>
+</div>
+{% endblock content %}
+

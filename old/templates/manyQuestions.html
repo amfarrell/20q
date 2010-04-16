@@ -1,0 +1,25 @@
+{% extends "simple.html" %}
+{% load i18n %}
+{% load commons_tags %}
+{% block title %}{% trans "Teach OpenMind about a concept" %}{% endblock title %}
+{% block content %}
+<p>
+{% if prev %}
+Previously, we've learned:</p><p>
+<ol>{% for p in prev %}
+<li>{{ p.1 }}</li>
+{% endfor %}
+</ol>
+{% endif %}
+<h2>Choose a sentence to fill in.</h2>
+<p>Please choose the kind of statement you want to teach OpenMind from this
+list. You should keep going until you have made 20 different statements.</p>
+<table>
+{% for f in frame_info %}
+<tr><td><a href="/usertest/frame/{{ f.0.id }}/1">{{ f.1 }}</a></td>
+<td><a href="/usertest/frame/{{ f.0.id }}/2">{{ f.2 }}</a></td></tr>
+{% endfor %}
+</table>
+</p>
+{% endblock content %}
+

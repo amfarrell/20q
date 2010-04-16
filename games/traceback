@@ -1,0 +1,38 @@
+2.5.egg/csc/conceptnet/models.py", line 59, in get
+    return cls.objects.get(name=name)
+  File "/home/afarrell/projects/tpaine/csc/lib/python2.5/site-packages/django/db/models/manager.py", line 132, in get
+    return self.get_query_set().get(*args, **kwargs)
+  File "/home/afarrell/projects/tpaine/csc/lib/python2.5/site-packages/django/db/models/manager.py", line 111, in get_query_set
+    return QuerySet(self.model, using=self._db)
+  File "/usr/lib/python2.5/bdb.py", line 52, in trace_dispatch
+    return self.dispatch_return(frame, arg)
+  File "/usr/lib/python2.5/bdb.py", line 85, in dispatch_return
+    self.user_return(frame, arg)
+  File "/usr/lib/python2.5/pdb.py", line 170, in user_return
+    self.interaction(frame, None)
+  File "/usr/lib/python2.5/pdb.py", line 186, in interaction
+    self.print_stack_entry(self.stack[self.curindex])
+  File "/usr/lib/python2.5/pdb.py", line 828, in print_stack_entry
+    prompt_prefix)
+  File "/usr/lib/python2.5/bdb.py", line 348, in format_stack_entry
+    s = s + repr.repr(rv)
+  File "/usr/lib/python2.5/repr.py", line 24, in repr
+    return self.repr1(x, self.maxlevel)
+  File "/usr/lib/python2.5/repr.py", line 34, in repr1
+    s = __builtin__.repr(x)
+  File "/home/afarrell/projects/tpaine/csc/lib/python2.5/site-packages/django/db/models/query.py", line 66, in __repr__
+    data = list(self[:REPR_OUTPUT_SIZE + 1])
+  File "/home/afarrell/projects/tpaine/csc/lib/python2.5/site-packages/django/db/models/query.py", line 81, in __len__
+    self._result_cache.extend(list(self._iter))
+  File "/home/afarrell/projects/tpaine/csc/lib/python2.5/site-packages/django/db/models/query.py", line 267, in iterator
+    for row in compiler.results_iter():
+  File "/home/afarrell/projects/tpaine/csc/lib/python2.5/site-packages/django/db/models/sql/compiler.py", line 685, in results_iter
+    for rows in self.execute_sql(MULTI):
+  File "/home/afarrell/projects/tpaine/csc/lib/python2.5/site-packages/django/db/models/sql/compiler.py", line 740, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/afarrell/projects/tpaine/csc/lib/python2.5/site-packages/django/db/backends/util.py", line 19, in execute
+    return self.cursor.execute(sql, params)
+  File "/home/afarrell/projects/tpaine/csc/lib/python2.5/site-packages/django/db/backends/sqlite3/base.py", line 193, in execute
+    return Database.Cursor.execute(self, query, params)
+django.db.utils.DatabaseError: no such table: conceptnet_relation
+

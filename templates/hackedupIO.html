@@ -3,7 +3,7 @@
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 {% block content %}
 
-{{ questionString }}
+<p id="question">{{ questionString }}</p>
 <form action="answerQuestion" method="POST">
     <input type="submit" name="userAnswer" type="radio" value="True" />
     <input type="submit" name="userAnswer" type="radio" value="False" />

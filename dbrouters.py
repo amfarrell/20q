@@ -32,7 +32,6 @@ class gamesRouter(object):
                 ('corpus_language',
                         ) :
                 return True
-#        print 'localhost'
         return False
     def db_for_read(self,model,**hints):
         """
@@ -41,7 +40,6 @@ class gamesRouter(object):
         if model._meta.app_label in CSC_apps :
             return 'ConceptNet'
         elif self.onCSC(model._meta.db_table):
-#            print 'ConceptNet'
             return 'ConceptNet'
         else:
             return 'default'
@@ -50,7 +48,6 @@ class gamesRouter(object):
         if model._meta.app_label in CSC_apps :
             return 'ConceptNet'
         elif self.onCSC(model._meta.db_table):
-#            print 'ConceptNet'
             return 'ConceptNet'
         else:
             return 'default'

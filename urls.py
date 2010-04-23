@@ -1,5 +1,6 @@
 from django.conf.urls.defaults import *
 import games
+from views import style,script
 import old # XXX remove this after we have successfully gottent the old site up and running and understood it.
 
 # Uncomment the next two lines to enable the admin:
@@ -18,4 +19,6 @@ urlpatterns = patterns('',
 #    (r'^admin/', include(admin.site.urls)),
     (r'^test/', include('games.urls')),
     (r'^old/', include('old.urls')),
+    (r'style/(.+)$', style),
+    (r'script/(.+)$', script),
 )

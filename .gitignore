@@ -2,4 +2,5 @@ db_password.py
 local_settings.py
 *~
 *.pyc
+*pyc
 *.swp

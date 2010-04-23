@@ -3,10 +3,10 @@
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 {% block content %}
 
-<p id="question">{{ questionString }}</p>
+<p id="question" class="blue">{{ questionString }}</p>
 <form action="answerQuestion" method="POST">
-    <input type="submit" name="userAnswer" type="radio" value="True" />
-    <input type="submit" name="userAnswer" type="radio" value="False" />
+    <input type="button" name="userAnswer" type="radio" value="True" />
+    <input type="button" name="userAnswer" type="radio" value="False" />
     <!-- we will need to handle Maybe eventually -->
 </form>
 {% endblock %}

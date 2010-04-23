@@ -21,10 +21,11 @@ def acceptAnswer(request):
     Takes the answer from the user, saves it in the state, gets a new
     question and renders that.
     """
+    if debug:
+        assert request.POST
     state = request.session['state']
-    if request.POST:
-        answerBlob = dehumanize(request.POST['userAnswer'],request.session['unanswered_question'])
-        request.session['state'].append(answerBlob)
+    answerBlob = dehumanize(request.POST['userAnswer'],request.session['unanswered_question'])
+    request.session['state'].append(answerBlob)
     new_questionBlob = get_question(state)
     if debug:
         assert type(new_questionBlob) is tuple
@@ -34,7 +35,7 @@ def acceptAnswer(request):
         assert type(new_questionBlob[2]) is bool
     questionString = humanize(new_questionBlob) 
     request.session['unanswered_question'] = new_questionBlob
-    return postQuestion(request,questionString)
+    return HttpResponse(questionString)
 
 def dehumanize(answerString,questionBlob):
     """
@@ -64,7 +65,6 @@ def humanize(questionBlob):
     (str(questionBlob[0]),str(questionBlob[1].text))
 
 def postQuestion(request, questionString=None):
-    print request
     if questionString is None:
         request.session['state'] = []
         questionString = humanize(DefaultQuestionBlob)

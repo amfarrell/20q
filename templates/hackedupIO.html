@@ -1,12 +1,17 @@
 {% extends "base.html" %}
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+{% block extraheaders %}
+    <script type="text/javascript" src="/script/jquery.js" ></script>
+    <script type="text/javascript" src="/script/afarrell.js"></script>
+    <link rel="stylesheet" href="/style/main.css" />
+{% endblock %}
 {% block content %}
 
+<center>
 <p id="question" class="blue">{{ questionString }}</p>
 <form action="answerQuestion" method="POST">
     <input type="button" name="userAnswer" type="radio" value="True" />
     <input type="button" name="userAnswer" type="radio" value="False" />
     <!-- we will need to handle Maybe eventually -->
 </form>
+</center>
 {% endblock %}

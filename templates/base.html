@@ -1,20 +1,104 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>{% block title %}{% endblock %}</title>
-        <!--{#{% for style in style_list %}#}-->
-    <script type="text/javascript" src="/script/jquery.js"
-        ></script>
-    <script type="text/javascript" src="/script/afarrell.js"></script>
-            {#{% endfor %}#}
-    <link rel="stylesheet" href="/style/main.css" />
-    </head>
-    <body>
-        {% block header %}
-        {% endblock %}
-        {% block content %}
-        {% endblock %}
-        {% block footer %}
-        {% endblock %}
-    </body>
-</html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<!-- I have commented out all of the javscript that is not mine because
+otherwise the two interfere and I won't want to have to deal with that.-->
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" xml:lang="en" lang="en"> 
+    <head> 
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/> 
+        <title>Open Mind Common Sense : </title> 
+        <!--[if IE]><style>
+            div {
+                zoom: 1; /* trigger hasLayout */
+            }
+        </style><![endif]--> 
+        <link rel="stylesheet" href="http://openmind.media.mit.edu/site_media/base.css" /> 
+        <link rel="stylesheet" href="http://openmind.media.mit.edu/site_media/pinax/css/tabs.css" /> 
+        <link rel="stylesheet" href="http://openmind.media.mit.edu/site_media/pinax/css/uni-form.css" /> 
+        {% block extraheaders %}{% endblock %}
+        
+        
+    <link rel="shortcut icon" href="http://openmind.media.mit.edu/favicon.ico" /> 
+    <link rel="stylesheet" href="http://openmind.media.mit.edu/site_media/css/site_tabs.css" /> 
+    <link rel="stylesheet" href="http://openmind.media.mit.edu/site_media/pinax/css/topics.css" /> 
+    <link rel="stylesheet" href="http://openmind.media.mit.edu/site_media/css/openmind.css" type="text/css" media="screen" /> 
+    <!-- <script type="http://openmind.media.mit.edutext/javascript" src="http://openmind.media.mit.edu/site_media/pinax/js/topics.js"></script>--> 
+    
+ 
+    </head> 
+    
+    <body> 
+        
+        
+        <div id="tabhead"> 
+            <div class="logo" dir="ltr"><a href="/"> 
+<img src="http://openmind.media.mit.edu/site_media/logo.png" alt="Open Mind Common Sense"/> 
+<span class="title">Open Mind Common Sense</span></a></div> 
+            <div class="login"> 
+    
+        <span class="userlink"><img src="http://openmind.media.mit.edu/site_media/openmind/OpenMind-square.png" alt="username" width="24" height="24" /><a href="http://openmind.media.mit.edu/profiles/username/">username</a></span> | <a href="http://openmind.media.mit.edu/openid/logout/?next=/account/logout/">Logout</a> 
+    
+<div style="text-align: right;"></div></div> 
+            <div class="tabs" > 
+ 
+</div> 
+            <div class="right_tab" id="concepts_tab"> 
+    
+        <table> 
+            <tr> 
+                <td class="tab rtab_concepts"><div><a href="http://openmind.media.mit.edu/en/concept/">Concepts</a></div></td> 
+                <td class="tab rtab_statements"><div><a href="http://openmind.media.mit.edu/en/statement/">Statements</a></div></td> 
+                <td class="tab rtab_add"><div><a href="http://openmind.media.mit.edu/en/add/">Add knowledge</a></div></td> 
+ 
+                <td class="tab rtab_notices"><div><a href="http://openmind.media.mit.edu/notices/">Messages</a></div></td> 
+            </tr> 
+        </table> 
+    
+</div> 
+        </div> 
+        <div id="subnav" class="clearfix"> 
+    <ul><li> 
+        <form action="http://openmind.media.mit.edu/en/concept/" method="POST"> 
+  <input type="text" width="15" name="concept_name" /> 
+  <input type="submit" value="Search" /> 
+</form> 
+ 
+    </li></ul> 
+</div> 
+{% block content %}{% endblock %}
+
+        
+<div id="footer"> 
+<div class="legal"> 
+    &copy; 2009 Commonsense Computing Group
+    - <a href="http://openmind.media.mit.edu/about/">About</a> 
+    
+    - Development Version
+    - <a href="http://bugs.launchpad.net/openmind-commons">Report a bug</a> 
+</div> 
+</div> 
+       <!-- 
+        <script src="http://openmind.media.mit.edu/site_media/pinax/js/jquery.js" type="text/javascript"></script> 
+        <script src="http://openmind.media.mit.edu/site_media/pinax/js/uni-form.jquery.js" type="text/javascript"></script> 
+        -->
+    
+       <!-- 
+    <script src="http://openmind.media.mit.edu/site_media/base.js" type="text/javascript"></script> 
+    <script src="http://openmind.media.mit.edu/site_media/prototype.js" type="text/javascript"></script> 
+    <script src="http://openmind.media.mit.edu/site_media/vote/voting.js" type="text/javascript"></script> 
+        -->
+    
+<!-- Google Analytics --> 
+<!--
+<script type="text/javascript"> 
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script> 
+<script type="text/javascript"> 
+try {
+var pageTracker = _gat._getTracker("UA-11039829-3");
+pageTracker._trackPageview();
+} catch(err) {}</script> 
+-->
+  
+ 
+    </body> 
+</html> 
